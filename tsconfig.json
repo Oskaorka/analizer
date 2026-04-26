@@ -1,0 +1,56 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" },
+    // { "path": "./tsconfig.node.json" },
+  ],
+
+  // "allowJs": true
+  // { "path": "./typing.d.ts }
+  // "include": [
+  //   "src", "typing.d.ts"
+  // ]
+  // "include": [
+  //   // "./resources/**/*.ts",
+  //   // "./resources/**/*.vue"
+  //   "src/**/*.ts",
+  //   "src/**/*.tsx",
+  //   "src/**/*.vue",
+  //   "tests/**/*.ts",
+  //   "tests/**/*.tsx",
+  //   "index.d.ts"
+  // ],
+  // "allowJs": true,
+  // "compilerOptions": {
+  //   "module": "commonjs",
+  //   "noImplicitReturns": true,
+  //   "noUnusedLocals": false,
+  //   "outDir": "lib",
+  //   "sourceMap": true,
+  //   "strict": true,
+  //   "target": "es2017",   
+  //   "noImplicitAny": true
+  // }
+  // "compilerOptions": {
+  //   "strictNullChecks": true,
+  //   "moduleResolution": "node",
+  //   "jsx": "react",
+  //   "noUnusedParameters": true,
+  //   "noUnusedLocals": true,
+  //   "allowSyntheticDefaultImports":true,
+  //   "target": "es5",
+  //   "module": "ES2015",
+  //   "declaration": true,
+  //   "outDir": "./lib",
+  //   "noImplicitAny": true,
+  //   "importHelpers": true
+  // },
+  // "include": [
+  //   "src/**/*",
+  //   "index.d.ts",   // declaration file path
+  // ],
+  // "compileOnSave": false
+
+
+}
