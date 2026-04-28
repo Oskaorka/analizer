@@ -21,19 +21,19 @@ interface IAddDataForm {
 
 const AddDataForm = ({
     handleSubmit,
-    executorList,
-    handleChange,
+    // executorList,
+    // handleChange,
     handleChangeForText,
     clickBack,
     nameDoc,
     numberDoc,
-    punctDoc,
+    // punctDoc,
     dateDoc,
-    nameInitiator,
-    typeDoc,
-    periodOfExecution,
-    executionOrder,
-    defaultValue,
+    // nameInitiator,
+    // typeDoc,
+    // periodOfExecution,
+    // executionOrder,
+    // defaultValue,
     styleDispley
             }:IAddDataForm) => {
     // const [styleDispley, setStyleDisplay] = useState('none');

@@ -13,7 +13,7 @@ const FormField = ({
     name,
     value,
     onChange,
-    styleInput,
+    // styleInput,
     nameLabel,
     description,
     type
@@ -21,7 +21,7 @@ const FormField = ({
     return (
         <div className="flex flex-col-reverse  border-1 border-grey-200 rounded-xl m-4">
             <input
-                className="p-2 text-center"
+                className="p-2 text-center cursor-pointer hover:bg-[#deffa8]"
                 style={{ fontSize: "16px", color: "grey" }}
                 type={type}
                 id={name}
