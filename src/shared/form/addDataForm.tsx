@@ -7,10 +7,10 @@ interface IAddDataForm {
     handleChange?: any,
     handleChangeForText?: any,
     clickBack?: any,
-    nameDoc?: any,
-    numberDoc?: any,
+    myShop?: any,
+    currentDate?: any,
+    latestDate?: any,
     punctDoc?: any,
-    dateDoc?: any,
     nameInitiator?: any,
     typeDoc?: any,
     periodOfExecution?: any,
@@ -25,10 +25,10 @@ const AddDataForm = ({
     // handleChange,
     handleChangeForText,
     clickBack,
-    nameDoc,
-    numberDoc,
+    myShop,
+    latestDate,
     // punctDoc,
-    dateDoc,
+    currentDate,
     // nameInitiator,
     // typeDoc,
     // periodOfExecution,
@@ -41,7 +41,7 @@ const AddDataForm = ({
     //     // console.log("ddd");
     //     setStyleDisplay('none')
     // }
-    console.log(styleDispley);
+    // console.log(styleDispley);
     
     return (
         <div className="w-1/2 h-1/2 absolute top-50 left-100 rounded-xl bg-[#ffe3a8] opacity-95"
@@ -65,24 +65,24 @@ const AddDataForm = ({
                     <div className="wrapper-field wrapper-field-left">
                         <FormField
                             nameLabel={"№22109, ул.Самойловой, д.8 "}
-                            name="nameDoc"
+                            name="myShop"
                             onChange={handleChangeForText}
-                            value={nameDoc}
+                            value={myShop}
                             description={"Магазин"}
                             type="text"
                         />
                         <FormField
-                            name="numberDoc"
-                            value={numberDoc}
+                            name="latestDate"
+                            value={latestDate}
                             onChange={handleChangeForText}
                             nameLabel={"дата прошлой ревизии"}
                             description={"14.12.2025"}
-                            type="text"
+                            type="date"
                             />
                         <FormField
-                            name="dateDoc"
+                            name="currentDate"
                             nameLabel={"текущий мип"}
-                            value={dateDoc}
+                            value={currentDate}
                             onChange={handleChangeForText}
                             description={"133 дня"}
                             type="text"

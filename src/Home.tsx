@@ -1,13 +1,21 @@
 import { useState, useEffect } from "react";
 import { Table } from "./shared/ui/Table/Table";
 import dataService from "./shared/service/dataService";
-// import FormField from "./shared/form/formField";
 import AddDataForm from "./shared/form/addDataForm";
 
 function Home() {
-
+    const [dataText, setDataText] = useState({
+        myShop: "",
+        currentDate: "",
+        latestDate: "",
+    });
     const [data, setData] = useState([])
+    const [styleDispley, setStyleDisplay] = useState('none');
+
+    const cls = 'p-4 border border-gray-500 bg-slate-200'
+    
     useEffect(() =>{
+        console.log(dataText);
         getData();
         
     }, [])
@@ -21,19 +29,23 @@ function Home() {
             
         }
     }
-    const cls = 'p-4 border border-gray-500 bg-slate-200'
 
     const addData = () => {
-        console.log('click');
         setStyleDisplay('block')
-        // FormField();
     }
 
-    const [styleDispley, setStyleDisplay] = useState('none');
     const clickBack  =() => {
-        // console.log("ddd");
         setStyleDisplay('none')
     }
+    const handleChange = ({target}:any) => {
+        console.log(dataText);
+        console.log(target);
+        
+        setDataText((prevState:any) => ({
+            ...prevState,
+            [target.name]: target.value
+        }));
+    };
 
     return (
         <>
@@ -49,9 +61,11 @@ function Home() {
                 >
                     войти в систему
                 </button>
-                <AddDataForm styleDispley={styleDispley} clickBack={clickBack}/>
-                {/* <FormField/> */}
-                {/* <button className="bg-sky-500 hover:bg-sky-700 ...">Save changes</button> */}
+                <AddDataForm 
+                    styleDispley={styleDispley} 
+                    clickBack={clickBack} 
+                    handleChangeForText={handleChange}
+                />
         </>
     )
 }

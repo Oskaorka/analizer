@@ -8,6 +8,11 @@ const dataService = {
         console.log(data);
         return data;
     },
+    // createDataShop: async () => {
+    //     const { data } = await httpService.post(shopEndpoint);
+    //     console.log(data);
+    //     return data;
+    // },
     getDpp: async () => {
         const { data } = await httpService.get(dppEndpoint);
         console.log(data);
