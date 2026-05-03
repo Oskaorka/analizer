@@ -9,13 +9,13 @@ interface ITitle {
 interface IData {
     street: string;
     mip: string;
+    idNumber: string;
     date: any;
     [key: string]: unknown;
 }
 
 export const TrBlocks = (props:ITitle) => {
     const {cls, data} = props;
-    console.log(data);
 
     return(
         <>
@@ -23,8 +23,9 @@ export const TrBlocks = (props:ITitle) => {
                 data.map((e: IData, i : number) =>(
                     <tr key={i}>
                         <ThBlock cls={cls} title={e.street}/>
-                        <ThBlock cls={cls} title={e.mip}/>
+                        <ThBlock cls={cls} title={e.idNumber}/>
                         <ThBlock cls={cls} title={e.date}/>
+                        <ThBlock cls={cls} title={e.mip}/>
                     </tr> 
                 )) 
             }

@@ -5,17 +5,16 @@ const dppEndpoint = "dppUsers/";
 const dataService = {
     getShop: async () => {
         const { data } = await httpService.get(shopEndpoint);
-        console.log(data);
+        // console.log(data);
         return data;
     },
-    // createDataShop: async () => {
-    //     const { data } = await httpService.post(shopEndpoint);
-    //     console.log(data);
-    //     return data;
-    // },
     getDpp: async () => {
         const { data } = await httpService.get(dppEndpoint);
-        console.log(data);
+        // console.log(data);
+        return data;
+    },
+    createDataDpp: async (payload) => {
+        const { data } = await httpService.put(dppEndpoint+payload.idNumber, payload);
         return data;
     }
 }

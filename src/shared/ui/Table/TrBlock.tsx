@@ -1,20 +1,22 @@
 import { ThBlock } from "./ThBlock";
 
 interface ITitle {
-    // title: string;
     cls: string;
 }
 export const TrBlock = (props:ITitle) => {
     const {cls} = props;
     return(
         <tr>
-            {/* <th className={cls}>{title}</th> */}
             {<ThBlock 
-                title={"магазин"}
+                title={"магазин (адрес)"}
                 cls={cls}
             />}
             {<ThBlock 
-                title={"мип"}
+                title={"№ магазина"}
+                cls={cls}
+            />}
+            {<ThBlock 
+                title={"мип (дней прошло)"}
                 cls={cls}
             />}
             {<ThBlock 

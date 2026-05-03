@@ -1,52 +1,45 @@
 import { useState, useEffect } from "react";
 import { Table } from "./shared/ui/Table/Table";
-import dataService from "./shared/service/dataService";
 import AddDataForm from "./shared/form/addDataForm";
+// import getDataService from "./shared/service/getDataServer"
+import dataService from "./shared/service/dataService"
+
 
 function Home() {
-    const [dataText, setDataText] = useState({
-        myShop: "",
-        currentDate: "",
-        latestDate: "",
-    });
+
     const [data, setData] = useState([])
     const [styleDispley, setStyleDisplay] = useState('none');
 
     const cls = 'p-4 border border-gray-500 bg-slate-200'
-    
-    useEffect(() =>{
-        console.log(dataText);
+    // getDataService.getDatas(setData)
+    // console.log((conta));
+    // console.log(dataService.getDpp());
+    // dataService.getDpp();
+    useEffect(() => {
+        // setData(conta)
         getData();
-        
+        console.log(data);
     }, [])
     
     async function getData() {
         try {
             const content  =  await dataService.getDpp();
-            setData(content)         
+            setData(content)  
+            // console.log(content);  
+            // return content
         } catch (error) {
             console.log(error);
-            
         }
     }
 
+
     const addData = () => {
         setStyleDisplay('block')
+
     }
 
-    const clickBack  =() => {
-        setStyleDisplay('none')
-    }
-    const handleChange = ({target}:any) => {
-        console.log(dataText);
-        console.log(target);
-        
-        setDataText((prevState:any) => ({
-            ...prevState,
-            [target.name]: target.value
-        }));
-    };
 
+ 
     return (
         <>
             <h1 className='text-[#50d71e] mb-10'>Главная страница</h1>
@@ -63,8 +56,10 @@ function Home() {
                 </button>
                 <AddDataForm 
                     styleDispley={styleDispley} 
-                    clickBack={clickBack} 
-                    handleChangeForText={handleChange}
+                    // clickBack={clickBack}
+                    setStyleDisplay={setStyleDisplay} 
+                    // handleChangeForText={handleChange}
+                    // handleSubmit={handleSubmit}
                 />
         </>
     )
