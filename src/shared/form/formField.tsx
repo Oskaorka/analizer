@@ -6,7 +6,14 @@ interface Iform {
     styleInput?: any,
     nameLabel?: any,
     description?: any,
-    type?: any
+    type?: any,
+    error?: any
+}
+interface Ierrors {
+    idNumber: number,
+    street: string,
+    date: Date,
+    mip: number,
 }
 
 const FormField = ({
@@ -16,10 +23,14 @@ const FormField = ({
     // styleInput,
     nameLabel,
     description,
-    type
+    type,
+    error
 }:Iform) => {
     return (
-        <div className="flex flex-col-reverse  border-1 border-grey-200 rounded-xl m-4">
+        <div className="flex flex-col-reverse  border-1 border-grey-200 rounded-xl m-4"
+        style={{color: "grey" }}
+        >
+            {error && <p style={{ fontSize: "20px", color: "tomato" }} >{error}</p>}
             <input
                 className="m-auto p-2 text-center cursor-pointer hover:bg-[#deffa8]"
                 style={{ fontSize: "16px", color: "grey" }}
@@ -34,7 +45,7 @@ const FormField = ({
                 style={{ fontSize: "16px", color: "grey" }}
                 className="pt-3 text-center"
                 htmlFor={name}
-            >
+                >
                 {nameLabel}
             </label>
         </div>
